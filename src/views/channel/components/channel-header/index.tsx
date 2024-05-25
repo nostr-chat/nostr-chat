@@ -17,7 +17,7 @@ const ChannelHeader = () => {
         return null;
     }
 
-    const hasPicture = channel.picture.startsWith('https://');
+    const hasPicture = channel.picture.match(/^(https:|data:)/);
 
     return <AppContentHeaderBase>
         {hasPicture && (
