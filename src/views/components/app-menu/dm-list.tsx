@@ -30,9 +30,9 @@ const DmListItem = (props: { contact: DirectContact }) => {
 
     const profile = profiles.find(x => x.creator === contact.pub);
     const label = profile?.name || truncateMiddle(contact.npub, 28, ':');
-    const isSelected = contact.pub === directMessage && location.pathname.startsWith('/dm/');
+    const isSelected = contact.pub === directMessage && location.pathname.startsWith(`${process.env.PUBLIC_URL}/dm`);
 
-    return <ListItem label={label} href={`/dm/${contact.npub}`} selected={isSelected} hasUnread={hasUnread}/>;
+    return <ListItem label={label} href={`${process.env.PUBLIC_URL}/dm/${contact.npub}`} selected={isSelected} hasUnread={hasUnread}/>;
 }
 
 const DmList = () => {
@@ -52,7 +52,7 @@ const DmList = () => {
         showModal({
             body: <StartDM onSuccess={(id) => {
                 showModal(null);
-                navigate(`/dm/${id}`).then();
+                navigate(`${process.env.PUBLIC_URL}/dm/${id}`).then();
             }}/>
         })
     }

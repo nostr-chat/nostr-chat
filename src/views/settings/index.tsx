@@ -29,7 +29,7 @@ const SettingsPage = (_: RouteComponentProps) => {
 
     useEffect(() => {
         if (!keys) {
-            navigate('/login').then();
+            navigate(`${process.env.PUBLIC_URL}/login`).then();
         }
     }, [keys]);
 
@@ -39,7 +39,7 @@ const SettingsPage = (_: RouteComponentProps) => {
             body: <ConfirmDialog onConfirm={() => {
                 removeKeys().then();
                 setKeys(null);
-                window.location.href = '/';
+                window.location.href = `${window.location.pathname}` ;
             }}/>
         });
     }

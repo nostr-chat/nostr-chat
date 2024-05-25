@@ -39,7 +39,7 @@ const DirectMessagePublic = (props: RouteComponentProps) => {
     }, [props]);
 
     useEffect(() => {
-        if (!npub) navigate('/').then();
+        if (!npub) navigate(`${process.env.PUBLIC_URL}/`).then();
     }, [npub]);
 
     useEffect(() => {

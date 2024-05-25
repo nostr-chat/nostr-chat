@@ -90,7 +90,7 @@ const Login = (props: { onDone: () => void }) => {
     }
 
     return <>
-        <Box component="img" src="/logo-large-white.png" sx={{
+        <Box component="img" src={process.env.PUBLIC_URL + '/logo-large-white.png'} sx={{
             width: isSm ? '526px' : '100%',
             height: isSm ? '132px' : null,
             m: '20px 0 10px 0'

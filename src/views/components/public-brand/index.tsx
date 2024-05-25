@@ -11,9 +11,9 @@ const PublicBrand = () => {
         display: 'flex',
         cursor: 'pointer'
     }} onClick={() => {
-        navigate('/login').then();
+        navigate(`${process.env.PUBLIC_URL}/login`).then();
     }}>
-        <Box sx={{height: '40px'}} component='img' src='/logo-large-white.png'></Box>
+        <Box sx={{height: '40px'}} component='img' src={process.env.PUBLIC_URL + '/logo-large-white.png'}></Box>
     </Box>
 }
 

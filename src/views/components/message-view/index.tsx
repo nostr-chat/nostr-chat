@@ -85,7 +85,7 @@ const MessageView = (props: { message: Message, compactView: boolean, dateFormat
     const profileClicked = () => {
         showModal({
             body: <ProfileDialog profile={profile} pubkey={message.creator} onDM={() => {
-                navigate(`/dm/${nip19.npubEncode(message.creator)}`).then();
+                navigate(`${process.env.PUBLIC_URL}/dm/${nip19.npubEncode(message.creator)}`).then();
             }}/>,
             maxWidth: 'xs',
             hideOnBackdrop: true

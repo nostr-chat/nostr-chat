@@ -24,9 +24,9 @@ const ChannelListItem = (props: { c: Channel }) => {
     const lMessage = messages[messages.length - 1];
     const hasUnread = keys?.priv !== 'none' && !!(readMarkMap[c.id] && lMessage && lMessage.created > readMarkMap[c.id]);
 
-    const isSelected = c.id === channel?.id && location.pathname.startsWith('/channel/');
+    const isSelected = c.id === channel?.id && location.pathname.startsWith(`${process.env.PUBLIC_URL}/channel`);
 
-    return <ListItem key={c.id} label={c.name} href={`/channel/${c.id}`} selected={isSelected} hasUnread={hasUnread}/>;
+    return <ListItem key={c.id} label={c.name} href={`${process.env.PUBLIC_URL}/channel/${c.id}`} selected={isSelected} hasUnread={hasUnread}/>;
 }
 
 const ChannelList = () => {

@@ -27,18 +27,18 @@ function App() {
         alignItems: 'center',
         justifyContent: 'center'
     }}>
-        <Home path='/'/>
-        <Login path='/login'/>
-        <Channel path='/channel'/>
-        {keys ? <Channel path='/channel/:channel'/> : <ChannelPublic path='/channel/:channel'/>}
-        {keys ? <DirectMessage path='/dm/:npub'/> : <DirectMessagePublic path='/dm/:npub'/>}
-        <Settings path='/settings'/>
-        <SettingsProfile path='/settings/profile'/>
-        <SettingsProfile path='/settings/profile'/>
-        <SettingsKeys path='/settings/keys'/>
-        <SettingsPassword path='/settings/password'/>
-        <SettingsRelays path='/settings/relays'/>
-        <SettingsPublicLinkPage path='/settings/public-link'/>
+        <Home path={process.env.PUBLIC_URL + '/'}/>
+        <Login path={process.env.PUBLIC_URL + '/login'}/>
+        <Channel path={process.env.PUBLIC_URL + '/channel'}/>
+        {keys ? <Channel path={process.env.PUBLIC_URL + '/channel/:channel'}/> : <ChannelPublic path={process.env.PUBLIC_URL + '/channel/:channel'}/>}
+        {keys ? <DirectMessage path={process.env.PUBLIC_URL + '/dm/:npub'}/> : <DirectMessagePublic path={process.env.PUBLIC_URL + '/dm/:npub'}/>}
+        <Settings path={process.env.PUBLIC_URL + '/settings'}/>
+        <SettingsProfile path={process.env.PUBLIC_URL + '/settings/profile'}/>
+        <SettingsProfile path={process.env.PUBLIC_URL + '/settings/profile'}/>
+        <SettingsKeys path={process.env.PUBLIC_URL + '/settings/keys'}/>
+        <SettingsPassword path={process.env.PUBLIC_URL + '/settings/password'}/>
+        <SettingsRelays path={process.env.PUBLIC_URL + '/settings/relays'}/>
+        <SettingsPublicLinkPage path={process.env.PUBLIC_URL + '/settings/public-link'}/>
     </Router>
 }
 

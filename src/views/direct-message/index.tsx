@@ -60,11 +60,11 @@ const DirectMessagePage = (props: RouteComponentProps) => {
     }, [props]);
 
     useEffect(() => {
-        if (!npub) navigate('/').then();
+        if (!npub) navigate(`${process.env.PUBLIC_URL}/`).then();
     }, [npub]);
 
     useEffect(() => {
-        if (!keys) navigate('/login').then();
+        if (!keys) navigate(`${process.env.PUBLIC_URL}/login`).then();
     }, [keys]);
 
     useEffect(() => {
@@ -79,7 +79,7 @@ const DirectMessagePage = (props: RouteComponentProps) => {
     useEffect(() => {
         const contact = directContacts.find(x => x.pub === pub);
         if (muteList.pubkeys.find(x => x === contact?.pub)) {
-            navigate('/').then();
+            navigate(`${process.env.PUBLIC_URL}/`).then();
         }
     }, [pub, muteList]);
 

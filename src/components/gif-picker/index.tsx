@@ -59,7 +59,7 @@ const Giphy = (props: { onSelect: (selected: string) => void }) => {
                 justifyContent: 'center',
                 mb: '6px'
             }}>
-                <Box component="img" src="/giphy.png" sx={{width: '260px'}}/>
+                <Box component="img" src={process.env.PUBLIC_URL + '/giphy.png'} sx={{width: '260px'}}/>
             </Box>
             <Grid
                 tabIndex={1}

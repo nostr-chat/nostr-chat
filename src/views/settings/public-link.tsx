@@ -26,14 +26,14 @@ const SettingsPublicLinkPage = (_: RouteComponentProps) => {
     const [t] = useTranslation();
     const theme = useTheme();
     useEffect(() => {
-        if (!keys) navigate('/login').then();
+        if (!keys) navigate(`${process.env.PUBLIC_URL}/login`).then();
     }, [keys]);
 
     const npub = useMemo(() => keys ? nip19.npubEncode(keys.pub) : null, [keys]);
 
     if (!keys) return null;
 
-    const url = `${window.location.protocol}//${window.location.host}/dm/${npub}`;
+    const url = `${window.location.protocol}//${window.location.host}${process.env.PUBLIC_URL}/dm/${npub}`;
 
     return <>
         <Helmet><title>{t('NostrChat - Public DM page')}</title></Helmet>

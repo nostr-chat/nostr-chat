@@ -49,7 +49,7 @@ const SettingsRelaysPage = (_: RouteComponentProps) => {
 
     useEffect(() => {
         if (!keys) {
-            navigate('/login').then();
+            navigate(`${process.env.PUBLIC_URL}/login`).then();
         }
     }, [keys]);
 
