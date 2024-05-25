@@ -60,7 +60,7 @@ const MetadataForm = (props: {
         const scheme = Joi.object({
             name: Joi.string().required(),
             about: Joi.string().empty(''),
-            picture: Joi.string().uri({scheme: 'https', allowRelative: false}).empty(''),
+            picture: Joi.string().uri({scheme: [/https?|data/], allowRelative: false}).empty(''),
         }).messages({
             'string.uriCustomScheme': t('Picture must be a valid uri with a scheme matching the https pattern')
         });

@@ -9,7 +9,7 @@ const Avatar = (props: { src?: string, seed: string, size: number, rounded?: boo
     const {src, seed, size, rounded} = props;
     const theme = useTheme();
     const avatar = useMemo(() => {
-        if (src && src.startsWith('https://')) {
+        if (src && src.match(/^(https:|data:)/)) {
             return src;
         }
 

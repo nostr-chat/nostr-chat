@@ -18,7 +18,7 @@ const ChannelCard = (props: { channel: Channel, onJoin: () => void }) => {
     const [keys] = useAtom(keysAtom);
     const [leftChannelList] = useAtom(leftChannelListAtom);
 
-    const hasPicture = channel.picture.startsWith('https://');
+    const hasPicture = channel.picture.match(/^(https:|data:)/);
     const left = leftChannelList.includes(channel.id);
 
     const join = () => onJoin();
