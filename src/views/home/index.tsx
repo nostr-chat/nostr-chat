@@ -8,9 +8,9 @@ const HomePage = (_: RouteComponentProps) => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        let redir = '/channel';
+        let redir = `${process.env.PUBLIC_URL}/channel`;
         if (!keys) {
-            redir = '/login'
+            redir = `${process.env.PUBLIC_URL}/login`;
         }
         navigate(redir).then();
     }, [keys])

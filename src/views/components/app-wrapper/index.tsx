@@ -46,7 +46,7 @@ const AppWrapper = (props: { children: React.ReactNode }) => {
                     alignItems: 'center',
                     cursor: 'pointer'
                 }} onClick={() => {
-                    navigate('/settings/keys').then();
+                    navigate(`${process.env.PUBLIC_URL}/settings/keys`).then();
                     setBackupWarn(false);
                 }}>
                     <Box sx={{

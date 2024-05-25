@@ -23,7 +23,7 @@ const UserMenu = () => {
     }
 
     const clicked = () => {
-        navigate('/settings').then();
+        navigate(`${process.env.PUBLIC_URL}/settings`).then();
     }
 
     return <Box sx={{

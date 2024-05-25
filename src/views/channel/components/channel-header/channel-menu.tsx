@@ -51,7 +51,7 @@ const ChannelMenu = () => {
         showModal({
             body: <ConfirmDialog onConfirm={() => {
                 raven?.deleteEvents([channel.id], '').then(() => {
-                    navigate('/channel').then();
+                    navigate(`${process.env.PUBLIC_URL}/channel`).then();
                 }).catch((e) => {
                     showMessage(e.toString(), 'error');
                 });
@@ -65,7 +65,7 @@ const ChannelMenu = () => {
         showModal({
             body: <ConfirmDialog onConfirm={() => {
                 raven?.updateLeftChannelList([...leftChannelList, channel.id]).then(() => {
-                    navigate('/channel').then();
+                    navigate(`${process.env.PUBLIC_URL}/channel`).then();
                 }).catch((e) => {
                     showMessage(e.toString(), 'error');
                 });

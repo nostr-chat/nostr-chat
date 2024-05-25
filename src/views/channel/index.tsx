@@ -53,11 +53,11 @@ const ChannelPage = (props: RouteComponentProps) => {
 
     useEffect(() => {
         // If the user didn't leave global chat for empty channel id
-        if (ravenStatus.ready && !cid && !leftChannelList.includes(GLOBAL_CHAT.id)) navigate(`/channel/${GLOBAL_CHAT.id}`).then();
+        if (ravenStatus.ready && !cid && !leftChannelList.includes(GLOBAL_CHAT.id)) navigate(`${process.env.PUBLIC_URL}/channel/${GLOBAL_CHAT.id}`).then();
     }, [cid, ravenStatus.ready]);
 
     useEffect(() => {
-        if (!keys) navigate('/login').then();
+        if (!keys) navigate(`${process.env.PUBLIC_URL}/login`).then();
     }, [keys]);
 
     useEffect(() => {

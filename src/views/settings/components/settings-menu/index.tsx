@@ -35,7 +35,7 @@ const SettingsMenu = () => {
             label={<Box sx={{display: 'flex', alignItems: 'center'}}>
                 <ArrowLeft height={16} style={{marginRight: '6px'}}/> {t('Chat')}
             </Box>}
-            href={'/'} selected={false}/>
+            href={process.env.PUBLIC_URL + '/'} selected={false}/>
     </AppMenuBase>
 }
 

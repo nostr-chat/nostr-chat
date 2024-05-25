@@ -23,7 +23,7 @@ const Invite = (props: { channel: Channel }) => {
         showModal(null);
     };
 
-    const url = `${window.location.protocol}//${window.location.host}/channel/${channel.id}`;
+    const url = `${window.location.protocol}//${window.location.host}${window.location.pathname}/channel/${channel.id}`;
 
     return (
         <>

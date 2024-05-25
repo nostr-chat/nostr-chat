@@ -23,7 +23,7 @@ const SettingsHeader = (props: { section?: string }) => {
                                 textDecoration: 'underline'
                             }
                         }} onClick={() => {
-                            navigate('/settings').then();
+                            navigate(`${process.env.PUBLIC_URL}/settings`).then();
                         }}>{t('Settings')}</Box> {` > ${props.section} `}
                     </>
                 }

@@ -16,7 +16,7 @@ import {profilesAtom} from 'atoms';
 import {notEmpty} from 'util/misc';
 
 const imgReg = /(https:\/\/)([^\s(["<,>/]*)(\/)[^\s[",><]*(.png|.jpg|.jpeg|.gif|.webp)(\?[^\s[",><]*)?/;
-const channelReg = new RegExp(`^${window.location.protocol}//${window.location.host}/channel/[a-f0-9]{64}$`, 'm');
+const channelReg = new RegExp(`^${window.location.protocol}//${window.location.host}${window.location.pathname}/channel/[a-f0-9]{64}$`, 'm');
 
 const useRenderContent = () => {
     const [, showModal] = useModal();
@@ -35,7 +35,7 @@ const useRenderContent = () => {
                 const cid = s[s.length - 1];
                 return <Link href={href} onClick={(e) => {
                     e.preventDefault();
-                    navigate(`/channel/${cid}`).then();
+                    navigate(`${process.env.PUBLIC_URL}/channel/${cid}`).then();
                 }}>{href}</Link>;
             }
 
@@ -82,7 +82,7 @@ const useRenderContent = () => {
                         e.preventDefault();
                         showModal({
                             body: <ProfileDialog profile={profile} pubkey={profile.creator} onDM={() => {
-                                navigate(`/dm/${nip19.npubEncode(profile.creator)}`).then();
+                                navigate(`${process.env.PUBLIC_URL}/dm/${nip19.npubEncode(profile.creator)}`).then();
                             }}/>,
                             maxWidth: 'xs',
                             hideOnBackdrop: true

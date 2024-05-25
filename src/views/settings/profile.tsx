@@ -25,7 +25,7 @@ const SettingsProfilePage = (_: RouteComponentProps) => {
 
     useEffect(() => {
         if (!keys) {
-            navigate('/login').then();
+            navigate(`${process.env.PUBLIC_URL}/login`).then();
         }
     }, [keys]);
 
@@ -44,7 +44,7 @@ const SettingsProfilePage = (_: RouteComponentProps) => {
                         setInProgress(true);
                         raven?.updateProfile(data).then(() => {
                             showMessage(t('Your profile updated'), 'success');
-                            navigate('/settings').then();
+                            navigate(`${process.env.PUBLIC_URL}/settings`).then();
                         }).catch(e => {
                             showMessage(e.toString(), 'error');
                         }).finally(() => setInProgress(false))

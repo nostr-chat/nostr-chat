@@ -29,7 +29,7 @@ const ChannelAddMenu = () => {
         showModal({
             body: <CreateChannel onSuccess={(id) => {
                 showModal(null);
-                navigate(`/channel/${id}`).then();
+                navigate(`${process.env.PUBLIC_URL}/channel/${id}`).then();
             }}/>
         })
 
@@ -40,7 +40,7 @@ const ChannelAddMenu = () => {
         showModal({
             body: <JoinChannel onSuccess={(id) => {
                 showModal(null);
-                navigate(`/channel/${id}`).then();
+                navigate(`${process.env.PUBLIC_URL}/channel/${id}`).then();
             }}/>
         })
 

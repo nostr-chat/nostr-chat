@@ -14,32 +14,32 @@ const useSettingsSections = () => {
             icon: <Account height={40}/>,
             title: t('Profile'),
             description: t('Edit your profile'),
-            href: '/settings/profile',
+            href: `${process.env.PUBLIC_URL}/settings/profile`
         },
         {
             icon: <KeyChain height={40}/>,
             title: t('Keys'),
             description: t('View your private & public keys'),
-            href: '/settings/keys'
+            href: `${process.env.PUBLIC_URL}/settings/keys`
         },
         {
             icon: <Lock height={40}/>,
             title: t('Password protection'),
             description: t('Secure your private key with a password'),
-            href: '/settings/password',
+            href: `${process.env.PUBLIC_URL}/settings/password`,
             hidden: true //keys?.priv === 'nip07'
         },
         {
             icon: <Server height={40}/>,
             title: t('Relays'),
             description: t('Manage your preferred relay list'),
-            href: '/settings/relays'
+            href: `${process.env.PUBLIC_URL}/settings/relays`
         },
         {
             icon: <LinkVariant height={40}/>,
             title: t('Public DM page'),
             description: t('Get your public DM page link'),
-            href: '/settings/public-link'
+            href: `${process.env.PUBLIC_URL}/settings/public-link`
         },
     ].filter(x => !x.hidden);
 }

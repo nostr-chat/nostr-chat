@@ -26,7 +26,7 @@ const ChannelPublicPage = (props: RouteComponentProps) => {
     const cid = useMemo(() => ('channel' in props) && isSha256(props.channel as string) ? props.channel as string : null, [props]);
 
     useEffect(() => {
-        if (!cid) navigate('/').then();
+        if (!cid) navigate(`${process.env.PUBLIC_URL}/`).then();
     }, [cid]);
 
     useEffect(() => {

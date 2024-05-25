@@ -16,7 +16,7 @@ const LoginPage = (_: RouteComponentProps) => {
     const [t,] = useTranslation();
     const navigate = useNavigate();
 
-    const onDone = () => navigate('/').then();
+    const onDone = () => navigate(`${process.env.PUBLIC_URL}/`).then();
 
     return <>
         <Helmet><title>{t('NostrChat - Sign in')}</title></Helmet>
